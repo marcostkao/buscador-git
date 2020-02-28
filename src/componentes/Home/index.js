@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+import { Link } from "react-router-dom";
 
 
 import {
@@ -59,6 +60,21 @@ class Home extends Component {
     render() {
         return (
             <>
+                <Navbar color="dark">
+                    <Container className="d-flex justify-content-center">
+
+                        <img className="rounded-circle border boder-white mr-3" width="50" src="https://www.thispersondoesnotexist.com/image" alt="pessoa aleatoria" />
+
+                        <span className="text-white" >
+                            Logado como: 
+                            <Link className="text-white font-weight-bold ml-3" to="/">
+                                {this.props.match.params.usuario}
+                            </Link>
+                        </span>
+
+                    </Container>
+                </Navbar>
+
                 <Navbar color="dark" fixed="bottom">
                     <Container className="d-flex justify-content-center">
                         <Col xs="12" md="6">
@@ -100,15 +116,15 @@ class Home extends Component {
                                     </Col>
                                 )) : (
                                         <Container className="h-100 d-flex flex-column justify-content-center align-items-center">
-                                                <MdStar color="#000" size="150" />
-                                                <h3>Digite uma data... </h3>
+                                            <MdStar color="#000" size="150" />
+                                            <h3>Digite uma data... </h3>
                                         </Container>
                                     )}
                             </Row>
                         </Container>
                     )}
 
-                    
+
 
                 {/* { this.state.meteoro.length == 0 && (
                     <Container className="h-100 d-flex flex-column justify-content-center align-items-center">

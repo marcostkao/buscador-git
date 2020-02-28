@@ -12,12 +12,14 @@ export default class Routes extends Component {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" component={Login} />
-                <Route path="/home" component={Home} />
+                <Route path="/" exact component={Login} />
+                <Route path="/home/:usuario" component={Home} />
             </Switch>
         </BrowserRouter>
     );
   }
 }
+
+
 
 
